@@ -1,0 +1,6 @@
+{
+  "name": "SmartCalc Hub",
+  "description": "Premium Production-Ready Progressive Web App (PWA) offering 50+ offline multi-category calculators, developer utilities, SEO generators, and image tools.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

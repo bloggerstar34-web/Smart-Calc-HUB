@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <title>SmartCalc Hub - 50+ Free Offline Calculators & Online Tools</title>
+    <meta name="description" content="Production-ready Progressive Web App (PWA) featuring 50+ offline calculators, developer tools, image utilities, SEO generators, and unit converters." />
+    <meta name="keywords" content="calculator, scientific calculator, mortgage calculator, emi calculator, regex tester, json formatter, image compressor, pwa, offline tools" />
+    <meta name="author" content="SmartCalc Hub Team" />
+    <meta name="theme-color" content="#2563eb" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="SmartCalc" />
+    <link rel="canonical" href="https://smartcalchub.com/" />
+    
+    <!-- PWA Manifest & Icons -->
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://smartcalchub.com/" />
+    <meta property="og:title" content="SmartCalc Hub - 50+ Free Offline Calculators & Tools" />
+    <meta property="og:description" content="Offline-first suite of daily productivity tools, image resizers, financial calculators, and developer converters." />
+    <meta property="og:image" content="/favicon.svg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://smartcalchub.com/" />
+    <meta property="twitter:title" content="SmartCalc Hub - All-in-One Online Tools PWA" />
+    <meta property="twitter:description" content="Free online tools that work offline. No Play Store or App Store needed." />
+    <meta property="twitter:image" content="/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-white text-gray-800 antialiased selection:bg-blue-600 selection:text-white min-h-screen flex flex-col">
+    <noscript>
+      <div style="padding: 20px; text-align: center; background: #fee2e2; color: #991b1b; font-family: sans-serif;">
+        <strong>JavaScript is required.</strong> Please enable JavaScript to run SmartCalc Hub PWA.
+      </div>
+    </noscript>
+    <div id="root" class="flex-1 flex flex-col"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').then((reg) => {
+            console.log('[PWA] ServiceWorker registered scope:', reg.scope);
+          }).catch((err) => {
+            console.warn('[PWA] ServiceWorker registration failed:', err);
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
+

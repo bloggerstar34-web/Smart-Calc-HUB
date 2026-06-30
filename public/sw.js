@@ -1,9 +1,9 @@
 const CACHE_NAME = 'smartcalc-hub-v1';
 const STATIC_ASSETS = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/favicon.svg'
+  '/Smart-Calc-HUB/',
+  '/Smart-Calc-HUB/index.html',
+  '/Smart-Calc-HUB/manifest.json',
+  '/Smart-Calc-HUB/favicon.svg'
 ];
 
 self.addEventListener('install', (event) => {
@@ -47,7 +47,7 @@ self.addEventListener('fetch', (event) => {
         })
         .catch(() => {
           return caches.match(event.request).then((cachedResponse) => {
-            return cachedResponse || caches.match('/index.html') || caches.match('/');
+            return cachedResponse || caches.match('/Smart-Calc-HUB/index.html') || caches.match('/Smart-Calc-HUB/');
           });
         })
     );
@@ -76,10 +76,10 @@ self.addEventListener('push', (event) => {
   const data = event.data ? event.data.json() : { title: 'SmartCalc Hub', body: 'New calculation tools available offline!' };
   const options = {
     body: data.body,
-    icon: '/favicon.svg',
-    badge: '/favicon.svg',
+    icon: '/Smart-Calc-HUB/favicon.svg',
+    badge: '/Smart-Calc-HUB/favicon.svg',
     vibrate: [100, 50, 100],
-    data: { url: data.url || '/' }
+    data: { url: data.url || '/Smart-Calc-HUB/' }
   };
   event.waitUntil(self.registration.showNotification(data.title, options));
 });
